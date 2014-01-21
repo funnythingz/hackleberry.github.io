@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Hackleberry: HTML5/CSS3/JavaScript UI Framework">
+  <meta name="keywords" content="Hackleberry, sass, compass">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0, maximum-scale=10">
+  <meta name="apple-mobile-web-app-capable" content="no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="address=no">
+  <link rel="apple-touch-icon-precomposed" href="">
+  <title>Scaffolding | Hackleberry: HTML5/CSS3/JavaScript UI Framework</title>
+  <link rel="shortcut icon" type="image/x-icon" href="">
+  <script src="js/hackleberry.min.js"></script>
+  <script>
+  (function(){
+   HACKLEBERRY.changeStylesheet({
+     path: 'css/',
+     file: ['hackleberry.css','reference.css'],
+     pure: true
+     });
+   })();
+  </script>
+</head>
+<body>
+
+<section id="globalMenu" class="global-menu fixed">
+  <nav class="menu global container center">
+    <ul class="horizontal"><!--
+      --><li class="spacing-left10"><a href="index.html">Hackleberry</a></li><!--
+      --><li class="spacing-left10"><a href="getting-started.html">Getting Started</a></li><!--
+      --><li class="spacing-left10 current"><a href="scaffolding.html">Scaffolding</a></li><!--
+      --><li class="spacing-left10"><a href="base.html">Base Elements</a></li><!--
+      --><li class="spacing-left10"><a href="components.html">Components</a></li><!--
+      --><li class="spacing-left10"><a href="icons.html">Icons</a></li><!--
+    --></ul>
+  </nav>
+</section>
+
+<header class="header">
+  <div class="container">
+    <h1 class="lv1">Scaffolding</h1>
+    <p class="lead">基本レイアウトやスタイルのリセット、余白、グリッドシステムを含んでいます。Hackleberryを使う上では読み込み必須になります。</p>
+  </div><!-- {* /.container *} -->
+</header><!-- {* /.header *} -->
+
+<div class="container">
+  <div class="row">
+    <div class="col3">
+      <ul id="sideMenu">
+        <li><a href="#Layout">Layout</a>
+          <ul>
+            <li><a href="#Container">Container</a></li>
+          </ul>
+        </li>
+        <li><a href="#Spacing">Spacing</a></li>
+        <li><a href="#Grid">Grid system</a>
+          <ul>
+            <li><a href="#Basic">Basic grid HTML</a></li>
+            <li><a href="#Offset">Offsetting columns</a></li>
+            <li><a href="#Nest">Nesting columns</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- {* /.col3 *} -->
+    
+    <div class="col9">
+      <article class="unit reference" id="Layout">
+        <div class="header">
+          <h1 class="lv1">Layout</h1>
+          <p class="lead">
+            基本レイアウトを構成する要素は<code class=".container">.container</code>を使います。
+          </p>
+        </div><!-- {* /.header.page *} -->
+        <section class="unit" id="Container">
+          <h1 class="lv2">Container</h1>
+          <p class="sentence">基本的なコンテナーをつくります。横幅を最小値/最大値が指定されています。</p>
+          <script src="https://gist.github.com/funnythingz/5134416.js"></script>
+        </section>
+      </article><!-- {* /#Layout *} -->
+
+      <article class="unit" id="Spacing">
+        <div class="header">
+          <h1 class="lv1">Spacing</h1>
+          <p class="lead"><code class="code">.spacing</code>で下方向にマージンがあきます。<code class="code">.spacing-left</code>で左方向、<code class="code">.spacing-right</code>で右方向にマージンがあきます。デフォルトで5pxあきます。</p>
+        </div><!-- {* /.header.page *} -->
+        <section class="unit">
+          <h1 class="lv2">spacing</h1>
+          <div class="example">
+            <p class="sentence spacing">下方向にマージンがあきます。</p>
+            <p class="sentence">text text text text text text text text text text text text text text</p>
+          </div>
+          <script src="https://gist.github.com/funnythingz/5134549.js"></script>
+        </section>
+        <section class="unit">
+          <h1 class="lv2">spacing*</h1>
+          <div class="example">
+            <p class="sentence spacing10">下方向にマージンが10pxあきます。</p>
+            <p class="sentence">text text text text text text text text text text text text text text</p>
+          </div>
+          <script src="https://gist.github.com/funnythingz/5134552.js"></script>
+        </section>
+      </article><!-- {* /#Spacing *} -->
+      
+      <article class="unit reference" id="Grid">
+        <div class="header">
+          <h1 class="lv1">Grid system</h1>
+          <p class="lead">
+            Hackleberryでは100%幅のカラムを12カラムで分割したグリッドでレイアウトしています。1~12のカラムを使ってさまざまなレイアウトを構築できます。<br>
+            <code class="code">.row</code>で枠をつくりその中の<code class="code">.col*</code>でレイアウトします。また、カラムの間にマージンをとりたい場合は<code class="code">.offset*</code>を使います。
+          </p>
+        </div><!-- {* /.header.page *} -->
+        <section class="unit" id="Basic">
+          <h1 class="lv2" id="Basic">Basic grid HTML</h1>
+          <p class="sentence"><code class="code">.col*</code></p>
+          <div class="example">
+            <div class="row">
+              <div class="col12">12</div>
+            </div>
+            <div class="row">
+              <div class="col6">6</div>
+              <div class="col6">6</div>
+            </div>
+            <div class="row">
+              <div class="col4">4</div>
+              <div class="col4">4</div>
+              <div class="col4">4</div>
+            </div>
+            <div class="row">
+              <div class="col3">3</div>
+              <div class="col3">3</div>
+              <div class="col3">3</div>
+              <div class="col3">3</div>
+            </div>
+            <div class="row">
+              <div class="col2">2</div>
+              <div class="col2">2</div>
+              <div class="col2">2</div>
+              <div class="col2">2</div>
+              <div class="col2">2</div>
+              <div class="col2">2</div>
+            </div>
+            <div class="row">
+              <div class="col1">1</div>
+              <div class="col1">1</div>
+              <div class="col1">1</div>
+              <div class="col1">1</div>
+              <div class="col1">1</div>
+              <div class="col1">1</div>
+              <div class="col1">1</div>
+              <div class="col1">1</div>
+              <div class="col1">1</div>
+              <div class="col1">1</div>
+              <div class="col1">1</div>
+              <div class="col1">1</div>
+            </div>
+          </div>
+          <script src="https://gist.github.com/funnythingz/5134428.js"></script>
+        </section>
+        <section class="unit">
+          <h1 class="lv2" id="Offset">Offsetting columns</h1>
+          <p class="sentence"><code class="code">.col*.offset*</code></p>
+          <div class="example">
+            <div class="row">
+              <div class="col11 offset1">11</div>
+            </div>
+            <div class="row">
+              <div class="col5">5</div>
+              <div class="col6 offset1">6</div>
+            </div>
+            <div class="row">
+              <div class="col2">2</div>
+              <div class="col2 offset2">2</div>
+              <div class="col2 offset4">2</div>
+            </div>
+            <div class="row">
+              <div class="col3">3</div>
+              <div class="col3 offset6">3</div>
+            </div>
+            <div class="row">
+              <div class="col5">5</div>
+              <div class="col5 offset2">5</div>
+            </div>
+            <div class="row">
+              <div class="col1">1</div>
+              <div class="col2 offset1">2</div>
+              <div class="col3 offset1">3</div>
+              <div class="col4">4</div>
+            </div>
+          </div>
+          <script src="https://gist.github.com/funnythingz/5134435.js"></script>
+        </section>
+        <section class="unit">
+          <h1 class="lv2" id="Nest">Nesting columns</h1>
+          <div class="example">
+            <div class="row">
+              <div class="col12">
+                12
+                <div class="row">
+                  <div class="col6">6</div>
+                  <div class="col6">6</div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col6">
+                6
+                <div class="row">
+                  <div class="col3">3</div>
+                  <div class="col3">3</div>
+                  <div class="col3">3</div>
+                  <div class="col3">3</div>
+                </div>
+              </div>
+              <div class="col6">
+                6
+                <div class="row">
+                  <div class="col4">4</div>
+                  <div class="col4">4</div>
+                  <div class="col4">4</div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col12">
+                12
+                <div class="row">
+                  <div class="col6">
+                    6
+                    <div class="row">
+                      <div class="col6">6</div>
+                      <div class="col6">6</div>
+                    </div>
+                  </div>
+                  <div class="col6">
+                    6
+                    <div class="row">
+                      <div class="col3">3</div>
+                      <div class="col3">3</div>
+                      <div class="col3">3</div>
+                      <div class="col3">3</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <script src="https://gist.github.com/funnythingz/5134442.js"></script>
+        </section>
+      </article><!-- {* /#Grid *} -->
+        
+    </div><!-- {* /.col9 *} -->
+  </div><!-- {* /.row *} -->
+</div><!-- {* /.container *} -->
+
+<footer class="footer global">
+  <div class="container center">
+    <div class="unit">
+      <p class="sentence">
+        &copy; <a href="http://www.funnythingz.com" target="_blank">funnythingz</a>
+      </p>
+    </div>
+  </div><!-- {* /.container *} -->
+</footer><!-- {* /.footer *} -->
+
+<script>
+(function(){
+  // sideMenu scrollFixed
+  HACKLEBERRY.scrollFixed({
+    id: 'sideMenu',
+    position: 100,
+    responsiveMinWidth: 560,
+    adjustment: 10
+  });
+})();
+(function(){
+  HACKLEBERRY.tapped('tap', 'tapped');
+})();
+</script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-1882060-13']);
+_gaq.push(['_trackPageview']);
+(function() {
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+</script>
+
+</body>
+</html>

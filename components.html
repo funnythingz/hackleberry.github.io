@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0, maximum-scale=10">
+  <meta name="apple-mobile-web-app-capable" content="no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="address=no">
+  <link rel="apple-touch-icon-precomposed" href="">
+  <title>Components | Hackleberry: HTML5/CSS3/JavaScript UI Framework</title>
+  <link rel="shortcut icon" type="image/x-icon" href="">
+  <script src="js/hackleberry.min.js"></script>
+  <script>
+  (function(){
+   HACKLEBERRY.changeStylesheet({
+     path: 'css/',
+     file: ['hackleberry.css','reference.css'],
+     pure: true
+     });
+   })();
+  </script>
+</head>
+<body>
+
+<section id="globalMenu" class="global-menu fixed">
+  <nav class="menu global container center">
+    <ul class="horizontal" style="background-color: rgba(255,255,255,0.8)"><!--
+      --><li class="spacing-left10"><a href="index.html">Hackleberry</a></li><!--
+      --><li class="spacing-left10"><a href="getting-started.html">Getting Started</a></li><!--
+      --><li class="spacing-left10"><a href="scaffolding.html">Scaffolding</a></li><!--
+      --><li class="spacing-left10"><a href="base.html">Base Elements</a></li><!--
+      --><li class="spacing-left10 current"><a href="components.html">Components</a></li><!--
+      --><li class="spacing-left10"><a href="icons.html">Icons</a></li><!--
+    --></ul>
+  </nav>
+</section>
+
+<header class="header">
+  <div class="container">
+    <h1 class="lv1">Components</h1>
+    <p class="lead">Hackleberryが独自に定義しているUIコンポーネント集です。</p>
+  </div><!-- {* /.container *} -->
+</header><!-- {* /.header *} -->
+
+<div class="container">
+  <div class="row">
+    <div class="col3">
+      <ul id="sideMenu">
+        <li><a href="#Unit">Unit</a>
+          <ul>
+            <li><a href="#Headline">Headline</a></li>
+            <li><a href="#Caption">Caption</a></li>
+            <li><a href="#Cassette">Cassette</a></li>
+            <li><a href="#Seemore">Seemore</a></li>
+          </ul>
+        </li>
+        <li><a href="#Flexible">Flexible</a></li>
+        <li><a href="#Buttons">Buttons</a></li>
+      </ul>
+    </div><!-- {* /.col3 *} -->
+    
+    <div class="col9">
+      <article class="unit scaffolding" id="Unit">
+        <div class="header">
+          <h1 class="lv1">Unit</h1>
+          <p class="lead">
+            Unitコンポーネントです。Unitは<code class="code">.headline</code>, <code class="code">.caption</code>, <code class="code">.unit</code>, <code class="code">.cassette</code>, <code class="code">.inner</code>を組み合わせて使います。
+            <code class="code">.cassette</code>は単体では機能せず、<code class="code">.unit</code>の中で使います。グループ化して使う場合はUnit単位で<code class="code">.cassette</code>をグループ化してください。
+            Cassette内には内側の余白は設定されていないため、<code class="code">.inner</code>を併用して使います。
+          </p>
+        </div><!-- {* /.header.page *} -->
+        <section class="unit scaffolding">
+          <h1 class="lv2" id="Headline">Headline</h1>
+          <p class="sentence">
+            <code class="code">.headline</code>
+          </p>
+          <div class="row">
+            <div class="col6">
+              <div class="example">
+                <section class="unit">
+                  <h1 class="headline">Headline</h1>
+                  <article class="cassette">
+                    <div class="inner">
+                      <p class="sentence">Cassette</p>
+                    </div>
+                  </article><!-- {* /.cassette *} -->
+                </section><!-- {* /.unit *} -->
+              </div><!-- {* /example *} -->
+            </div><!-- {* /.col6 *} -->
+            <div class="col6">
+              <script src="https://gist.github.com/funnythingz/5802820.js"></script>
+            </div><!-- {* /.col6 *} -->
+          </div><!-- {* /.row *} -->
+        </section>
+        <section class="unit scaffolding">
+          <p class="sentence">
+            <code class="code">.headline.skin-{$color}</code>とすることでHeadlineの色を変更することができます。
+          </p>
+          <div class="row">
+            <div class="col6">
+              <div class="example">
+                <section class="unit">
+                  <h1 class="headline">default</h1>
+                </section><!-- {* /.unit *} -->
+                <section class="unit">
+                  <h1 class="headline skin-purple">purple</h1>
+                </section><!-- {* /.unit *} -->
+                <section class="unit">
+                  <h1 class="headline skin-red">red</h1>
+                </section><!-- {* /.unit *} -->
+                <section class="unit">
+                  <h1 class="headline skin-orange">orange</h1>
+                </section><!-- {* /.unit *} -->
+                <section class="unit">
+                  <h1 class="headline skin-yellow">yellow</h1>
+                </section><!-- {* /.unit *} -->
+                <section class="unit">
+                  <h1 class="headline skin-green">green</h1>
+                </section><!-- {* /.unit *} -->
+                <section class="unit">
+                  <h1 class="headline skin-gray">gray</h1>
+                </section><!-- {* /.unit *} -->
+                <section class="unit">
+                  <h1 class="headline skin-silver">silver</h1>
+                </section><!-- {* /.unit *} -->
+              </div><!-- {* /example *} -->
+            </div><!-- {* /.col6 *} -->
+            <div class="col6">
+              <script src="https://gist.github.com/funnythingz/5802822.js"></script>
+            </div><!-- {* /.col6 *} -->
+          </div><!-- {* /.row *} -->
+        </section>
+        <section class="unit scaffolding">
+          <h1 class="lv2" id="Caption">Caption</h1>
+          <p class="sentence">
+            <code class="code">.caption</code> headlineはUnitの一番上で使う大見出しですが、captionは中間で使う中見出しになります。
+          </p>
+          <div class="row">
+            <div class="col6">
+              <div class="example">
+                <section class="unit">
+                  <h1 class="headline">Headline</h1>
+                  <article class="cassette">
+                    <div class="inner">
+                      <p class="sentence">Cassette</p>
+                    </div>
+                  </article><!-- {* /.cassette *} -->
+                  <h2 class="caption">Caption</h2>
+                  <article class="cassette">
+                    <div class="inner">
+                      <p class="sentence">Cassette</p>
+                    </div>
+                  </article><!-- {* /.cassette *} -->
+                  <article class="cassette">
+                    <div class="inner">
+                      <p class="sentence">Cassette</p>
+                    </div>
+                  </article><!-- {* /.cassette *} -->
+                </section><!-- {* /.unit *} -->
+              </div><!-- {* /example *} -->
+            </div><!-- {* /.col6 *} -->
+            <div class="col6">
+              <script src="https://gist.github.com/funnythingz/5820415.js"></script>
+            </div><!-- {* /.col6 *} -->
+          </div><!-- {* /.row *} -->
+        </section>
+        <section class="unit scaffolding">
+          <p class="sentence">
+            <code class="code">.caption.skin-{$color}</code>とすることでcaptionの色を変更することができます。
+          </p>
+          <div class="row">
+            <div class="col6">
+              <div class="example">
+                <section class="unit">
+                  <h1 class="caption">default</h1>
+                </section><!-- {* /.unit *} -->
+                <section class="unit">
+                  <h1 class="caption skin-purple">purple</h1>
+                </section><!-- {* /.unit *} -->
+                <section class="unit">
+                  <h1 class="caption skin-red">red</h1>
+                </section><!-- {* /.unit *} -->
+                <section class="unit">
+                  <h1 class="caption skin-orange">orange</h1>
+                </section><!-- {* /.unit *} -->
+                <section class="unit">
+                  <h1 class="caption skin-yellow">yellow</h1>
+                </section><!-- {* /.unit *} -->
+                <section class="unit">
+                  <h1 class="caption skin-green">green</h1>
+                </section><!-- {* /.unit *} -->
+                <section class="unit">
+                  <h1 class="caption skin-gray">gray</h1>
+                </section><!-- {* /.unit *} -->
+                <section class="unit">
+                  <h1 class="caption skin-silver">silver</h1>
+                </section><!-- {* /.unit *} -->
+              </div><!-- {* /example *} -->
+            </div><!-- {* /.col6 *} -->
+            <div class="col6">
+              <script src="https://gist.github.com/funnythingz/5820418.js"></script>
+            </div><!-- {* /.col6 *} -->
+          </div><!-- {* /.row *} -->
+        </section>
+        <section class="unit scaffolding">
+          <h1 class="lv2" id="Cassette">Cassette</h1>
+          <p class="sentence">
+            <code class="code">.cassette</code>
+          </p>
+          <div class="row">
+            <div class="col6">
+              <div class="example">
+                <section class="unit">
+                  <article class="cassette">
+                    <div class="inner">
+                      <p class="sentence">Cassette</p>
+                    </div>
+                  </article><!-- {* /.cassette *} -->
+                </section><!-- {* /.unit *} -->
+              </div><!-- {* /example *} -->
+            </div><!-- {* /.col6 *} -->
+            <div class="col6">
+              <script src="https://gist.github.com/funnythingz/5684450.js"></script>
+            </div><!-- {* /.col6 *} -->
+          </div><!-- {* /.row *} -->
+        </section>
+        <section class="unit scaffolding">
+          <p class="sentence">
+            Cassetteを複数で並べてみた版。
+          </p>
+          <div class="row">
+            <div class="col6">
+              <div class="example">
+                <section class="unit">
+                  <article class="cassette">
+                    <div class="inner">
+                      <p class="sentence">Cassette 1</p>
+                    </div>
+                  </article><!-- {* /.cassette *} -->
+                  <article class="cassette">
+                    <div class="inner">
+                      <p class="sentence">Cassette 2</p>
+                    </div>
+                  </article><!-- {* /.cassette *} -->
+                  <article class="cassette">
+                    <div class="inner">
+                      <p class="sentence">Cassette 3</p>
+                    </div>
+                  </article><!-- {* /.cassette *} -->
+                </section><!-- {* /.unit *} -->
+              </div><!-- {* /.example *} -->
+            </div><!-- {* /.col6 *} -->
+            <div class="col6">
+              <script src="https://gist.github.com/funnythingz/5669079.js"></script>
+            </div><!-- {* /.col6 *} -->
+          </div><!-- {* /.row *} -->
+        </section>
+        <section class="unit scaffolding">
+          <p class="sentence">
+            UnitでCassetteをグルーピング化してみた版。
+          </p>
+          <div class="row">
+            <div class="col6">
+              <div class="example">
+                <section class="unit">
+                  <article class="cassette">
+                    <div class="inner">
+                      <p class="sentence">Cassette 1-1</p>
+                    </div>
+                  </article><!-- {* /.cassette *} -->
+                </section><!-- {* /.unit *} -->
+
+                <section class="unit">
+                  <article class="cassette">
+                    <div class="inner">
+                      <p class="sentence">Cassette 2-1</p>
+                    </div>
+                  </article><!-- {* /.cassette *} -->
+                  <article class="cassette">
+                    <div class="inner">
+                      <p class="sentence">Cassette 2-2</p>
+                    </div>
+                  </article><!-- {* /.cassette *} -->
+                </section><!-- {* /.unit *} -->
+
+                <section class="unit">
+                  <article class="cassette">
+                    <div class="inner">
+                      <p class="sentence">Cassette 3-1</p>
+                    </div>
+                  </article><!-- {* /.cassette *} -->
+                  <article class="cassette">
+                    <div class="inner">
+                      <p class="sentence">Cassette 3-2</p>
+                    </div>
+                  </article><!-- {* /.cassette *} -->
+                  <article class="cassette">
+                    <div class="inner">
+                      <p class="sentence">Cassette 3-3</p>
+                    </div>
+                  </article><!-- {* /.cassette *} -->
+                </section><!-- {* /.unit *} -->
+              </div><!-- {* /.example *} -->
+            </div><!-- {* /.col6 *} -->
+            <div class="col6">
+              <script src="https://gist.github.com/funnythingz/5683064.js"></script>
+            </div><!-- {* /.col6 *} -->
+          </div><!-- {* /.row *} -->
+        </section>
+        <section class="unit scaffolding">
+          <p class="sentence">
+            Cassetteにリンクをつけた版です。<code class="code">.tap</code>と組み合わせて使います。
+          </p>
+          <div class="row">
+            <div class="col6">
+              <div class="example">
+                <section class="unit">
+                  <article class="cassette">
+                    <a class="tap" href="">
+                      <div class="inner">
+                        <div class="flexible">
+                          <div class="item">
+                            <p class="sentence">Cassette</p>
+                          </div>
+                          <div class="item-caret">&gt;</div>
+                        </div><!-- {* /.flexible *} -->
+                      </div>
+                    </a><!-- {* /.tap *} -->
+                  </article><!-- {* /.cassette *} -->
+                </section><!-- {* /.unit *} -->
+              </div><!-- {* /example *} -->
+            </div><!-- {* /.col6 *} -->
+            <div class="col6">
+              <script src="https://gist.github.com/funnythingz/5689355.js"></script>
+            </div><!-- {* /.col6 *} -->
+          </div><!-- {* /.row *} -->
+        </section>
+        <section class="unit scaffolding">
+          <p class="sentence">
+            <code class="code">.tapped</code>リンクをおしたとき。
+          </p>
+          <div class="row">
+            <div class="col6">
+              <div class="example">
+                <section class="unit">
+                  <article class="cassette">
+                    <a class="tap tapped" href="">
+                      <div class="inner">
+                        <div class="flexible">
+                          <div class="item">
+                            <p class="sentence">Cassette</p>
+                          </div>
+                          <div class="item-caret">&gt;</div>
+                        </div><!-- {* /.flexible *} -->
+                      </div>
+                    </a><!-- {* /.tap *} -->
+                  </article><!-- {* /.cassette *} -->
+                </section><!-- {* /.unit *} -->
+              </div><!-- {* /example *} -->
+            </div><!-- {* /.col6 *} -->
+            <div class="col6">
+              <script src="https://gist.github.com/funnythingz/5689353.js"></script>
+            </div><!-- {* /.col6 *} -->
+          </div><!-- {* /.row *} -->
+        </section>
+        <section class="unit scaffolding">
+          <h1 class="lv2" id="Seemore">Seemore</h1>
+          <p class="sentence">
+            <code class="code">.seemore</code>
+          </p>
+          <div class="row">
+            <div class="col6">
+              <div class="example">
+                <section class="unit">
+                  <article class="cassette">
+                    <div class="inner">
+                      <p class="sentence">Cassette</p>
+                    </div>
+                  </article><!-- {* /.cassette *} -->
+                  <article class="cassette">
+                    <div class="inner">
+                      <p class="sentence">Cassette</p>
+                    </div>
+                  </article><!-- {* /.cassette *} -->
+                  <section class="cassette">
+                    <a href="" class="tap">
+                      <div class="inner">
+                        <div class="flexible">
+                          <div class="item">
+                            <p class="seemore">もっと見る</p>
+                          </div>
+                          <div class="item-caret">
+                            <div class="item-caret">&gt;</div>
+                          </div>
+                        </div><!-- {* /.flexible *} -->
+                      </div>
+                    </a><!-- {* /.tap *} -->
+                  </section><!-- {* /.cassette *} -->
+                </section><!-- {* /.unit *} -->
+              </div><!-- {* /example *} -->
+            </div><!-- {* /.col6 *} -->
+            <div class="col6">
+              <script src="https://gist.github.com/funnythingz/5820678.js"></script>
+            </div><!-- {* /.col6 *} -->
+          </div><!-- {* /.row *} -->
+        </section>
+      </article><!-- {* /#Unit *} -->
+
+      <article class="unit scaffolding" id="Flexible">
+        <div class="header">
+          <h1 class="lv1">Flexible</h1>
+          <p class="lead">
+            FlexibleはCassetteの中身をレイアウトするのに使われます。<code class="code">.flexible</code>が枠になり<code class="code">.item</code>で区切ってラップします。
+            アイコンをラップする場合は<code class="code">.wrap-icon*</code>を使います。*には各サイズが入ります。
+          </p>
+        </div><!-- {* /.header.page *} -->
+        <section class="unit scaffolding">
+          <p class="sentence">
+            <code class="code">.unit</code>, <code class="code">.cassette</code>, <code class="code">.flexible</code>, <code class="code">.wrap-icon*</code>, <code class="code">.item</code>を全て組み合わせて使った場合
+          </p>
+          <div class="row">
+            <div class="col6">
+              <div class="example">
+                <section class="unit">
+                  <article class="cassette">
+                    <a class="tap" href="">
+                      <div class="inner">
+                        <div class="flexible">
+                          <div class="wrap-icon48">
+                            <figure class="icon48 tap" style="background-image:url(imgs/1x/dummy/blue.png)"></figure>
+                          </div>
+                          <div class="item">
+                            <cite class="lead">Lead Copy</cite>
+                            <p class="sentence">Body Copy Body Copy</p>
+                          </div>
+                          <div class="item-caret">&gt;</div>
+                        </div><!-- {* /.flexible *} -->
+                      </div>
+                    </a>
+                  </article><!-- {* /.cassette *} -->
+                </section><!-- {* /.unit *} -->
+              </div><!-- {* /example *} -->
+            </div><!-- {* /.col6 *} -->
+            <div class="col6">
+              <script src="https://gist.github.com/funnythingz/5689357.js"></script>
+            </div><!-- {* /.col6 *} -->
+          </div><!-- {* /.row *} -->
+        </section><!-- {* /.unit *} -->
+        <section class="unit scaffolding">
+          <p class="sentence">
+            全体をタップした時
+          </p>
+          <div class="row">
+            <div class="col6">
+              <div class="example">
+                <section class="unit">
+                  <article class="cassette">
+                    <a class="tap tapped" href="">
+                      <div class="inner">
+                        <div class="flexible">
+                          <div class="wrap-icon48">
+                            <figure class="icon48 tap" style="background-image:url(imgs/1x/dummy/blue.png)"></figure>
+                          </div>
+                          <div class="item">
+                            <cite class="lead">Lead Copy</cite>
+                            <p class="sentence">Body Copy Body Copy</p>
+                          </div>
+                          <div class="item-caret">&gt;</div>
+                        </div><!-- {* /.flexible *} -->
+                      </div>
+                    </a>
+                  </article><!-- {* /.cassette *} -->
+                </section><!-- {* /.unit *} -->
+              </div><!-- {* /example *} -->
+            </div><!-- {* /.col6 *} -->
+            <div class="col6">
+              <script src="https://gist.github.com/funnythingz/5689359.js"></script>
+            </div><!-- {* /.col6 *} -->
+          </div><!-- {* /.row *} -->
+        </section><!-- {* /.unit *} -->
+        <section class="unit scaffolding">
+          <p class="sentence">
+            アイコンをタップした時
+          </p>
+          <div class="row">
+            <div class="col6">
+              <div class="example">
+                <section class="unit">
+                  <article class="cassette">
+                    <a class="tap" href="">
+                      <div class="inner">
+                        <div class="flexible">
+                          <div class="wrap-icon48">
+                            <figure class="icon48 tap tapped" style="background-image:url(imgs/1x/dummy/blue.png)"></figure>
+                          </div>
+                          <div class="item">
+                            <cite class="lead">Lead Copy</cite>
+                            <p class="sentence">Body Copy Body Copy</p>
+                          </div>
+                          <div class="item-caret">&gt;</div>
+                        </div><!-- {* /.flexible *} -->
+                      </div>
+                    </a>
+                  </article><!-- {* /.cassette *} -->
+                </section><!-- {* /.unit *} -->
+              </div><!-- {* /example *} -->
+            </div><!-- {* /.col6 *} -->
+            <div class="col6">
+              <script src="https://gist.github.com/funnythingz/5689361.js"></script>
+            </div><!-- {* /.col6 *} -->
+          </div><!-- {* /.row *} -->
+        </section><!-- {* /.unit *} -->
+      </article><!-- {* /#Flexible *} -->
+
+      <article class="unit scaffolding" id="Buttons">
+        <div class="header">
+          <h1 class="lv1">Buttons</h1>
+          <p class="lead">
+            ボタンコンポーネントです。基本クラス<code class="code">.btn</code>とステータスクラス<code class="code">.primary</code>などと組み合わせて使います。ボタンの目的に応じてステータスクラスを使い分けます。
+          </p>
+        </div><!-- {* /.header.page *} -->
+        <section class="unit scaffolding">
+          <h1 class="lv2">Basic buttons</h1>
+          <p class="sentence">基本的なボタンです。<code class="code">.btn</code></p>
+          <div class="example">
+            <button class="btn tiny">tiny button</button>
+            <button class="btn small">small button</button>
+            <button class="btn">button</button>
+            <button class="btn large">large button</button>
+            <button class="btn jumbo">jumbo button</button>
+            <button class="btn huge">huge button</button>
+          </div>
+          <script src="https://gist.github.com/funnythingz/5179357.js"></script>
+        </section>
+      </article><!-- {* /#Buttons *} -->
+
+    </div><!-- {* /.col9 *} -->
+  </div><!-- {* /.row *} -->
+</div><!-- {* /.container *} -->
+
+<footer class="footer global">
+  <div class="container center">
+    <div class="unit">
+      <p class="sentence">
+        &copy; <a href="http://www.funnythingz.com" target="_blank">funnythingz</a>
+      </p>
+    </div>
+  </div><!-- {* /.container *} -->
+</footer><!-- {* /.footer *} -->
+
+<script>
+(function(){
+  // sideMenu scrollFixed
+  HACKLEBERRY.scrollFixed({
+    id: 'sideMenu',
+    position: 100,
+    responsiveMinWidth: 560,
+    adjustment: 10
+  });
+})();
+(function(){
+  HACKLEBERRY.tapped('tap', 'tapped');
+})();
+</script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-1882060-13']);
+_gaq.push(['_trackPageview']);
+(function() {
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+</script>
+
+</body>
+</html>
